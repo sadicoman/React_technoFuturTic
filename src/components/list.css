@@ -1,0 +1,33 @@
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.list__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    width: 50%;
+    height: auto;
+    background-color: violet;
+    border: 1px solid chartreuse;
+}
+.list__title {
+    font-size: 2rem;
+    text-decoration: underline;
+}
+.list__task {
+    align-self: flex-start;
+}
+.list__completed {
+    color: chartreuse;
+    font-weight: bold;
+    background-color: aquamarine;
+}
+.list__ongoing {
+    color: brown;
+}

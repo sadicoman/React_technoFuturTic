@@ -13,10 +13,33 @@ const listItems = [
 const Task = () => {
     const [list, setList] = useState(listItems);
 
+    const handleDelete = (id) => {
+        // l'id egal a item.id est supprimé
+        const updatedList = list.filter((item) => item.id !== id);
+        setList(updatedList);
+    };
+
+    const handleComplete = (id) => {
+        const updatedList = list.map((item) => {
+            if (item.id === id) {
+                return { ...item, completed: true };
+            } else {
+                return item;
+            }
+        });
+        setList(updatedList);
+    };
+
+    const handleUpdate = (val) => {
+        setList([...list, val]);
+    };
+
+    console.log(list.map((i) => i.id));
+
     return (
         <section>
-            <Form />
-            <List taskList={list} />
+            <Form updateList={handleUpdate} />
+            <List taskList={list} deleted={handleDelete} completed={handleComplete} />
         </section>
     );
 };
